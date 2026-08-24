@@ -10,9 +10,11 @@
     </style>
 </head>
 <body>
+    
     <div id="score">Score: 0</div>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
     <script>
+        
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         const gridSize = 20;
@@ -44,6 +46,7 @@
         }
 
         function drawGame() {
+            
             // Move snake
             const head = {x: snake[0].x + dx, y: snake[0].y + dy};
             snake.unshift(head);
