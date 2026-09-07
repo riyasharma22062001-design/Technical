@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>Snake Game</title>
-    <style>
+    <style> 
+        
         body { background: black; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial; }
         canvas { border: 1px solid white; background: black; }
         
         #score { color: white; position: absolute; top: 10px; left: 10px; font-size: 20px; }
+        
     </style>
 </head>
 <body>
@@ -30,7 +32,8 @@
         function randomFood() {
             food = {
                 x: Math.floor(Math.random() * tileCount),
-                y: Math.floor(Math.random() * tileCount)
+                y: Math.floor(Math.random() * tileCount) 
+                
             };
         }
         randomFood();
