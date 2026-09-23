@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-    
+<head>   
     <title>Snake Game</title>
     <style> 
         
         body { background: black; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial; }
         canvas { border: 1px solid white; background: black; }
         
-        #score { color: white; position: absolute; top: 10px; left: 10px; font-size: 20px; }
-        
+        #score { color: white; position: absolute; top: 10px; left: 10px; font-size: 20px; }     
     </style>
 </head>
-<body>
-    
+<body>    
     <div id="score">Score: 0</div>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
     <script>
@@ -37,6 +34,7 @@
                 
             };
         }
+        
         randomFood();
 
         document.addEventListener('keydown', changeDirection);
@@ -47,6 +45,7 @@
             else if (key === UP && dy !== 1) { dx = 0; dy = -1; }
             else if (key === RIGHT && dx !== -1) { dx = 1; dy = 0; }
             else if (key === DOWN && dy !== -1) { dx = 0; dy = 1; }
+            
         }
 
         function drawGame() {
@@ -63,6 +62,7 @@
                 randomFood();
             } else {
                 snake.pop();
+                
             }
 
             // Collision
