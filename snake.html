@@ -3,6 +3,7 @@
 <head>   
     <title>Snake Game</title>
     <style> 
+
         
         body { background: black; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial; }
         canvas { border: 1px solid white; background: black; }
@@ -14,6 +15,7 @@
     <div id="score">Score: 0</div>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
     <script>
+
         
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
@@ -27,6 +29,7 @@
         let score = 0;
         let gameOver = false;
 
+        
         function randomFood() {
             food = {
                 x: Math.floor(Math.random() * tileCount),
