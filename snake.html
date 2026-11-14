@@ -35,7 +35,8 @@
                 y: Math.floor(Math.random() * tileCount) 
                 
             };
-        }       
+        }  
+        
         randomFood();
 
         document.addEventListener('keydown', changeDirection);
@@ -47,10 +48,9 @@
             else if (key === RIGHT && dx !== -1) { dx = 1; dy = 0; }            else if (key === DOWN && dy !== -1) { dx = 0; dy = 1; }
             
         }
-        function drawGame() {
-            
-            // Move snake
-            
+        
+        function drawGame() {          
+            // Move snake          
             const head = {x: snake[0].x + dx, y: snake[0].y + dy};
             snake.unshift(head);
 
@@ -63,7 +63,6 @@
                 snake.pop();
                 
             }
-
             // Collision
             if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || snakeCollision(head)) {
                 gameOver = true;
@@ -72,10 +71,8 @@
                 ctx.fillText('Game Over! Score: ' + score, 50, 200);
                 return;
             }
-
             ctx.fillStyle = 'black';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             // Snake
             ctx.fillStyle = 'lime';
             snake.forEach(part => ctx.fillRect(part.x * gridSize, part.y * gridSize, gridSize - 2, gridSize - 2));
