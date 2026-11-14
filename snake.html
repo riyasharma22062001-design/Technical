@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>   
+    
     <title>Snake Game</title>
     <style> 
-
-        
+      
         body { background: black; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial; }
         canvas { border: 1px solid white; background: black; }
         
@@ -12,11 +12,11 @@
     </style>
 </head>
 <body>    
+    
     <div id="score">Score: 0</div>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
     <script>
-
-        
+      
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         const gridSize = 20;
@@ -28,7 +28,6 @@
         let dy = 0;
         let score = 0;
         let gameOver = false;
-
         
         function randomFood() {
             food = {
@@ -36,8 +35,7 @@
                 y: Math.floor(Math.random() * tileCount) 
                 
             };
-        }
-        
+        }       
         randomFood();
 
         document.addEventListener('keydown', changeDirection);
@@ -46,11 +44,9 @@
             const key = event.keyCode;
             if (key === LEFT && dx !== 1) { dx = -1; dy = 0; }
             else if (key === UP && dy !== 1) { dx = 0; dy = -1; }
-            else if (key === RIGHT && dx !== -1) { dx = 1; dy = 0; }
-            else if (key === DOWN && dy !== -1) { dx = 0; dy = 1; }
+            else if (key === RIGHT && dx !== -1) { dx = 1; dy = 0; }            else if (key === DOWN && dy !== -1) { dx = 0; dy = 1; }
             
         }
-
         function drawGame() {
             
             // Move snake
